@@ -1,0 +1,32 @@
+sudo apt install nodejs npm curl
+ln -s /usr/bin/nodejs /usr/bin/node
+
+node --version
+npm --version
+
+
+# PM (Process Manager)
+
+sudo npm install pm2 -g
+
+pm2 start webapp.js
+
+pm2 list
+$ pm2 stop     <app_name|namespace|id|'all'|json_conf>
+$ pm2 restart  <app_name|namespace|id|'all'|json_conf>
+$ pm2 delete   <app_name|namespace|id|'all'|json_conf>
+
+pm2 describe <id|app_name>
+pm2 monit
+
+pm2 logs
+$ pm2 logs APP-NAME       # Display APP-NAME logs
+$ pm2 logs --json         # JSON output
+$ pm2 logs --format       # Formated output
+
+$ pm2 flush               # Flush all logs
+$ pm2 reloadLogs          # Reload all logs
+
+
+
+pm2 install pm2-logrotate
